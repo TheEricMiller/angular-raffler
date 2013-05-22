@@ -1,0 +1,5 @@
+== Angular Raffler App
+
+http://angularjs.org/
+
+http://railscasts.com/episodes/405-angularjs?autoplay=true
