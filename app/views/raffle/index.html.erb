@@ -1,20 +1,27 @@
-<h1>Treat Raffler</h1>
+<h1>Treatfler <small>A random treat raffler.</small></h1>
 
 <div ng-controller="RaffleCtrl">
-  <form ng-submit="addEntry()">
-    <input type="text" ng-model="newEntry.name">
-    <input type="submit" value="Add">
-  </form>
-  
-  <ul>
-  	<li ng-repeat="entry in entries">
-  		{{entry.name}}
-  		<span ng-show="entry.winner" ng-class="{highlight: entry == lastWinner}" class="winner">TREATED</span>
-      <a ng-click="deleteEntry($index)" href="#">X</a>
-  	</li>
-  </ul>
 
-  <button ng-click="drawWinner()">Give Treat</button>
-  <button ng-click="resetWinners()">Reset Winners</button>
-  <button ng-click="clearEntries()">Clear</button>
+
+
+<form ng-submit="addEntry()">
+  <input ng-model="newEntry.name" type="text" placeholder="New Person">
+  <input type="submit" class="button success prefix" value="Add">
+</form>
+
+<ul>
+<li ng-repeat="entry in entries">
+  <a ng-click="deleteEntry($index)" class="tiny alert" href="#">X</a>
+  {{entry.name}}
+  <span ng-show="entry.winner && (entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">Gets a Treat!</span>
+  <span ng-show="entry.winner && !(entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">TREATED</span>
+</li>
+</ul>
+
+<button ng-click="drawWinner()" class="small">Give Treat</button>
+<button ng-click="clearEntries()" class="small secondary">Clear</button>
+<button ng-click="resetWinners()" class="small secondary">Reset Winners</button>
+
+
+
 </div>
