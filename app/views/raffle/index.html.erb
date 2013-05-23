@@ -24,9 +24,9 @@
     <div class="panel">
 
       <a ng-click="deleteEntry($index)" class="general foundicon-remove" href="#"></a>
-      <i class="social foundicon-torso"></i>   {{entry.name}}
-      <span ng-show="entry.winner && (entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">Gets a Treat!</span>
-      <span ng-show="entry.winner && !(entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">TREATED</span>
+      <i class="social foundicon-torso"></i> <span class="entryName"> {{entry.name}} </span>
+      <span ng-show="entry.winner && (entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success stat' || 'button round tiny secondary stat' ">Gets a Treat!</span>
+      <span ng-show="entry.winner && !(entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success stat' || 'button round tiny secondary stat' ">TREATED</span>
 
     </div>
   </div>
