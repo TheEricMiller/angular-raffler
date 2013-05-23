@@ -1,14 +1,25 @@
+
+html, body {
+  margin: 15px;
+  background:url(image_path('honey_im_subtle.png'));
+}
+
 ul {
   list-style: none;
 }
 
-li {
-  border-bottom: solid 1px #CCC;
-  a {
-    color: #CCC;
-    font-size: 12px;
+  .panel {
+    border-bottom: solid 1px #CCC;
+    position: relative;
+    a {
+      color: #CCC;
+      font-size: 12px;
+    }
+    a:hover {
+      color: red;
+    }
+    span {
+      position: absolute;
+      right: 10px;
+    }
   }
-  a:hover {
-    color: red;
-  }
-}

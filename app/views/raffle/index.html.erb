@@ -1,27 +1,37 @@
 <h1>Treatfler <small>A random treat raffler.</small></h1>
 
 <div ng-controller="RaffleCtrl">
+<div class="row">
 
 
 
-<form ng-submit="addEntry()">
-  <input ng-model="newEntry.name" type="text" placeholder="New Person">
-  <input type="submit" class="button success prefix" value="Add">
-</form>
+  <div class="large-4 columns">
+    <div class="panel">
 
-<ul>
-<li ng-repeat="entry in entries">
-  <a ng-click="deleteEntry($index)" class="general foundicon-remove" href="#"></a>
-  <i class="social foundicon-torso"></i> {{entry.name}}
-  <span ng-show="entry.winner && (entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">Gets a Treat!</span>
-  <span ng-show="entry.winner && !(entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">TREATED</span>
-</li>
-</ul>
+      <h4>People</h4>
+      <form ng-submit="addEntry()">
+        <input ng-model="newEntry.name" type="text" placeholder="Add a New Entry">
+        <input type="submit" class="button success prefix" value="Add">
+      </form>  
+      <button ng-click="clearEntries()" class="small secondary"><i class="accessibility foundicon-eject"></i> Clear</button>
+      <hr>
+      <button ng-click="drawWinner()" class="small"><i class="general foundicon-heart"></i> Give Treat</button>
+      <button ng-click="resetWinners()" class="small secondary"><i class="general foundicon-refresh"></i> Reset Winners</button>
 
-<button ng-click="drawWinner()" class="small"><i class="general foundicon-heart"></i> Give Treat</button>
-<button ng-click="clearEntries()" class="small secondary"><i class="accessibility foundicon-eject"></i> Clear</button>
-<button ng-click="resetWinners()" class="small secondary"><i class="general foundicon-refresh"></i> Reset Winners</button>
+    </div>
+  </div>
+  <div ng-repeat="entry in entries" class="large-4 columns">
+    <div class="panel">
+
+      <a ng-click="deleteEntry($index)" class="general foundicon-remove" href="#"></a>
+      <i class="social foundicon-torso"></i>   {{entry.name}}
+      <span ng-show="entry.winner && (entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">Gets a Treat!</span>
+      <span ng-show="entry.winner && !(entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">TREATED</span>
+
+    </div>
+  </div>
 
 
 
+</div>
 </div>
