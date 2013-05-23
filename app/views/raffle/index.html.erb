@@ -11,16 +11,16 @@
 
 <ul>
 <li ng-repeat="entry in entries">
-  <a ng-click="deleteEntry($index)" class="tiny alert" href="#">X</a>
-  {{entry.name}}
+  <a ng-click="deleteEntry($index)" class="general foundicon-remove" href="#"></a>
+  <i class="social foundicon-torso"></i> {{entry.name}}
   <span ng-show="entry.winner && (entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">Gets a Treat!</span>
   <span ng-show="entry.winner && !(entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success' || 'button round tiny secondary' ">TREATED</span>
 </li>
 </ul>
 
-<button ng-click="drawWinner()" class="small">Give Treat</button>
-<button ng-click="clearEntries()" class="small secondary">Clear</button>
-<button ng-click="resetWinners()" class="small secondary">Reset Winners</button>
+<button ng-click="drawWinner()" class="small"><i class="general foundicon-heart"></i> Give Treat</button>
+<button ng-click="clearEntries()" class="small secondary"><i class="accessibility foundicon-eject"></i> Clear</button>
+<button ng-click="resetWinners()" class="small secondary"><i class="general foundicon-refresh"></i> Reset Winners</button>
 
 
 

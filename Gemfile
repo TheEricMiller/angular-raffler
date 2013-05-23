@@ -27,6 +27,7 @@ group :assets do
 
   gem 'angularjs-rails'
   gem 'zurb-foundation'
+  gem 'foundation-icons-sass-rails'
 end
 
 gem 'jquery-rails'
