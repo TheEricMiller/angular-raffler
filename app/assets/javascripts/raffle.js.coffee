@@ -39,5 +39,19 @@ app.factory "Entry", ["$resource", ($resource) ->
 		$scope.entries[idx].$remove()
 		$scope.entries.splice( idx, 1 );
 		console.log("Entry Deleted")
+
+	$scope.addDefaultEntries = ->
+		seeds = ["Eric Miller","Ali","Bruno","Jeff","Karl","Kim","Perry","Behnaz","Shep","Trish","Scott","JD"]
+		console.log(seeds)
+		angular.forEach seeds, (seedName) ->
+			##seedling = []
+			##seedling.name = seedName
+			entry = $scope.Entry.save({"Test"})
+			$scope.entries.push(entry)
+			console.log("...added: " + seedling)
+		console.log("Defaults Added")
+
 		
 ]
+
+

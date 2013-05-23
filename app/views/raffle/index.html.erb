@@ -1,4 +1,4 @@
-<h1>Treatfler <small>A random treat raffler.</small></h1>
+<h1>Treatfler <small>(An)gular treat raffler.</small></h1>
 
 <div ng-controller="RaffleCtrl">
 <div class="row">
@@ -13,10 +13,11 @@
         <input ng-model="newEntry.name" type="text" placeholder="Add a New Entry">
         <input type="submit" class="button success prefix" value="Add">
       </form>  
-      <button ng-click="clearEntries()" class="small secondary"><i class="accessibility foundicon-eject"></i> Clear</button>
+      <button ng-click="clearEntries()" class="small secondary"><i class="accessibility foundicon-eject"></i> Clear Entries</button>
+      <!-- <button ng-click="addDefaultEntries()" class="small secondary"><i class="general foundicon-address-book"></i> Add Friends</button> -->
       <hr>
-      <button ng-click="drawWinner()" class="small"><i class="general foundicon-heart"></i> Give Treat</button>
       <button ng-click="resetWinners()" class="small secondary"><i class="general foundicon-refresh"></i> Reset Winners</button>
+      <button ng-click="drawWinner()" class="small"><i class="general foundicon-heart"></i> Give Treat</button>
 
     </div>
   </div>
