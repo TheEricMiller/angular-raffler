@@ -1,17 +1,38 @@
-<h1>Raffler</h1>
+<h1>Treatfler <small>(An)gular treat raffler.</small></h1>
 
 <div ng-controller="RaffleCtrl">
-  <form ng-submit="addEntry()">
-    <input type="text" ng-model="newEntry.name">
-    <input type="submit" value="Add">
-  </form>
-  
-  <ul>
-  	<li ng-repeat="entry in entries">
-  		{{entry.name}}
-  		<span ng-show="entry.winner" ng-class="{highlight: entry == lastWinner}" class="winner">WINNER</span>
-  	</li>
-  </ul>
+<div class="row">
 
-  <button ng-click="drawWinner()">Draw Winner</button>
+
+
+  <div class="large-4 columns">
+    <div class="panel">
+
+      <h4>People</h4>
+      <form ng-submit="addEntry()">
+        <input ng-model="newEntry.name" type="text" placeholder="Add a New Entry">
+        <input type="submit" class="button success prefix" value="Add">
+      </form>  
+      <button ng-click="clearEntries()" class="small secondary"><i class="accessibility foundicon-eject"></i> Clear Entries</button>
+      <!-- <button ng-click="addDefaultEntries()" class="small secondary"><i class="general foundicon-address-book"></i> Add Friends</button> -->
+      <hr>
+      <button ng-click="resetWinners()" class="small secondary"><i class="general foundicon-refresh"></i> Reset Winners</button>
+      <button ng-click="drawWinner()" class="small"><i class="general foundicon-heart"></i> Give Treat</button>
+
+    </div>
+  </div>
+  <div ng-repeat="entry in entries" class="large-4 columns">
+    <div class="panel">
+
+      <a ng-click="deleteEntry($index)" class="general foundicon-remove" href="#"></a>
+      <i class="social foundicon-torso"></i> <span class="entryName"> {{entry.name}} </span>
+      <span ng-show="entry.winner && (entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success stat' || 'button round tiny secondary stat' ">Gets a Treat!</span>
+      <span ng-show="entry.winner && !(entry == lastWinner)" ng-class=" (entry == lastWinner) && 'button round tiny success stat' || 'button round tiny secondary stat' ">TREATED</span>
+
+    </div>
+  </div>
+
+
+
+</div>
 </div>

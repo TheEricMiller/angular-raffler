@@ -26,6 +26,8 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 
   gem 'angularjs-rails'
+  gem 'zurb-foundation'
+  gem 'foundation-icons-sass-rails'
 end
 
 gem 'jquery-rails'

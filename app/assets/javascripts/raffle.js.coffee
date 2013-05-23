@@ -21,4 +21,37 @@ app.factory "Entry", ["$resource", ($resource) ->
 	    	entry.winner = true
 	    	entry.$update()
 	    	$scope.lastWinner = entry
+	    	console.log("Winner is " + entry.name)
+
+	$scope.resetWinners = ->
+		angular.forEach $scope.entries, (entry) ->
+			entry.winner = false
+			entry.$update()
+		console.log("Winners Reset")
+
+	$scope.clearEntries = ->
+		angular.forEach $scope.entries, (entry) ->
+			entry.$remove()
+		$scope.entries = []
+		console.log("Entries Cleared")
+
+	$scope.deleteEntry = (idx) ->
+		$scope.entries[idx].$remove()
+		$scope.entries.splice( idx, 1 );
+		console.log("Entry Deleted")
+
+	$scope.addDefaultEntries = ->
+		seeds = ["Eric Miller","Ali","Bruno","Jeff","Karl","Kim","Perry","Behnaz","Shep","Trish","Scott","JD"]
+		console.log(seeds)
+		angular.forEach seeds, (seedName) ->
+			##seedling = []
+			##seedling.name = seedName
+			entry = $scope.Entry.save({"Test"})
+			$scope.entries.push(entry)
+			console.log("...added: " + seedling)
+		console.log("Defaults Added")
+
+		
 ]
+
+
